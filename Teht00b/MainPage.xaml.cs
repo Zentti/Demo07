@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -33,6 +34,21 @@ namespace Teht00b
             ApplicationView.PreferredLaunchViewSize = new Size(800, 600);
             // disable debugging
             App.Current.DebugSettings.EnableFrameRateCounter = false;
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Name: " + nameTextbox.Text);
+            Debug.WriteLine("Email: " + emailTextbox.Text);
+
+            if ((bool)normalUserRadioButton.IsChecked)
+            {
+                Debug.WriteLine("Normal user");
+            }
+            if ((bool)adminUserRadioButton.IsChecked)
+            {
+                Debug.WriteLine("Admin");
+            }
         }
     }
 }

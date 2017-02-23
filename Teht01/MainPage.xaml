@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Teht01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Teht01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF2670F1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="Number of draws:" FontSize="40" Margin="20,20,0,0"/>
+            <TextBox x:Name="drawsTextBox" Width="100" Height="30" Margin="200,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="drawButton" Content="Draw" Margin="50,0,0,0" Width="100" Height="50" Click="drawButton_Click"/>
+            <Button x:Name="clearButton" Content="Clear" Margin="50,0,0,0" Width="100" Height="50" Click="clearButton_Click"/>
+        </StackPanel>
+        <TextBlock Grid.Row="2" Text="Random numbers:" FontSize="40" Margin="20,20,0,0"/>
+        <ScrollViewer Grid.Row="3">
+            <TextBlock x:Name="randomnumbersTextBlock" Margin="20,20,20,20"/>
+        </ScrollViewer>
+    </Grid>
+</Page>
