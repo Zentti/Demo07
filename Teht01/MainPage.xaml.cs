@@ -30,6 +30,10 @@ namespace Teht01
 
         private void drawButton_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
             Random rand = new Random();
             int randnum;
             List<string> rows = new List<string>();
@@ -49,19 +53,22 @@ namespace Teht01
                     }
                     randomnumbers.Add(randnum);
                 }
-                temp = "Row " + i.ToString("00") + ":";
-                temp2 = temp + string.Join(" ", randomnumbers.ToArray()) + "\n";
+                randomnumbers.Sort();
+                temp = "Row " + i.ToString("00") + ": ";
+                temp2 = temp + string.Join(", ", randomnumbers.ToArray()) + "\n";
                 rows.Add(temp2);
                 randomnumbers.Clear();
             }
-            
-            
-
+            randomnumbersTextBlock.Text = String.Join(String.Empty, rows.ToArray());
         }
+        
+
+
+        
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
-
+            randomnumbersTextBlock.Text = "";
         }
     }
 }
